@@ -3,13 +3,10 @@ api_endpoint: central-stackrox.apps.acs.etbit.io
 ui_endpoint: "{{ api_endpoint }}"
 
 auth_provider: {name: OpenShift, type: openshift}
-default_auth_provider_role: None
+default_auth_provider_role: Admin
 
 # Associate roles with users/groups in Provider
 role_mappings:
   - key: name
     value: etbit
-    role_name: Admin
-  - key: name
-    value: kubeadmin
     role_name: Admin
