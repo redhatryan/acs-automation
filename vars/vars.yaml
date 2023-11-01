@@ -4,3 +4,9 @@ ui_endpoint: "{{ api_endpoint }}"
 
 auth_provider: {name: OpenShift, type: openshift}
 default_auth_provider_role: None
+
+# Associate roles with users/groups in Provider
+role_mappings:
+  - key: name
+    value: admin
+    role_name: Admin
