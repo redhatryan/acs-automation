@@ -64,54 +64,54 @@
         status_code: [200,409,500]
 
     # Create the permission sets
-    - name: Create Permission Sets
-      uri:
-        url: "https://{{ api_endpoint }}/v1/permissionsets"
-        method: POST
-        validate_certs: no
-        headers:
-          authorization: "{{ authorization }}"
-        body_format: json
-        body: "{{ item }}"
-        status_code: [200, 409, 500]
-      with_items: "{{ permission_sets }}"
+    #- name: Create Permission Sets
+    #  uri:
+    #    url: "https://{{ api_endpoint }}/v1/permissionsets"
+    #    method: POST
+    #    validate_certs: no
+    #    headers:
+    #      authorization: "{{ authorization }}"
+    #    body_format: json
+    #    body: "{{ item }}"
+    #    status_code: [200, 409, 500]
+    #  with_items: "{{ permission_sets }}"
 
     # Create the access scopes
-    - name: Create Access Scopes
-      uri:
-        url: "https://{{ api_endpoint }}/v1/simpleaccessscopes"
-        method: POST
-        validate_certs: no
-        headers:
-          authorization: "{{ authorization }}"
-        body_format: json
-        body: "{{ item }}"
-        status_code: [200, 409, 500]
-      with_items: "{{ access_scopes }}"
+    #- name: Create Access Scopes
+    #  uri:
+    #    url: "https://{{ api_endpoint }}/v1/simpleaccessscopes"
+    #    method: POST
+    #    validate_certs: no
+    #    headers:
+    #      authorization: "{{ authorization }}"
+    #    body_format: json
+    #    body: "{{ item }}"
+    #    status_code: [200, 409, 500]
+    #  with_items: "{{ access_scopes }}"
 
     # Need to get the permission sets to get IDs for Roles
-    - name: Get Permission Sets
-      uri:
-        url: "https://{{ api_endpoint }}/v1/permissionsets"
-        method: GET
-        validate_certs: no
-        headers:
-          authorization: "{{ authorization }}"
-        body_format: json
-        status_code: 200
-      register: permission_set_result
+    #- name: Get Permission Sets
+    #  uri:
+    #    url: "https://{{ api_endpoint }}/v1/permissionsets"
+    #    method: GET
+    #    validate_certs: no
+    #    headers:
+    #      authorization: "{{ authorization }}"
+    #    body_format: json
+    #    status_code: 200
+    #  register: permission_set_result
 
     # Need to get the access scopes to get IDs for Roles
-    - name: Get Access Scopes
-      uri:
-        url: "https://{{ api_endpoint }}/v1/simpleaccessscopes"
-        method: GET
-        validate_certs: no
-        headers:
-          authorization: "{{ authorization }}"
-        body_format: json
-        status_code: 200
-      register: access_scope_result
+    #- name: Get Access Scopes
+    #  uri:
+    #    url: "https://{{ api_endpoint }}/v1/simpleaccessscopes"
+    #    method: GET
+    #    validate_certs: no
+    #    headers:
+    #      authorization: "{{ authorization }}"
+    #    body_format: json
+    #    status_code: 200
+    #  register: access_scope_result
 
     # Create all of the roles
     - name: Create Roles
