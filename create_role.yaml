@@ -34,7 +34,7 @@
     body:
       name: "{{ item.name }}"
       description: "{{ item.description }}"
-      permissionSetId: "{{ permission_set[0].id}}"
-      accessScopeId: "{{ access_scope[0].id }}"
-      globalAccess: "{{ item.global_access }}"
+      #permissionSetId: "{{ permission_set[0].id}}"
+      #accessScopeId: "{{ access_scope[0].id }}"
+      #globalAccess: "{{ item.global_access }}"
     status_code: [200, 409]
